@@ -55,5 +55,124 @@ ancestor(X,Z) :- parent(X,Y), ancestor(Y,Z).
 
 
 
+91 ?- father(homer,X).
+X = bart ;
+X = lisa ;
+X = maggie.
+
+92 ?- father(X,bart).
+X = homer ;
+false.
+
+93 ?- mother(marge,X).
+X = bart ;
+X = lisa ;
+X = maggie.
+
+94 ?- mother(X,ling).
+X = selma.
+
+95 ?- son(X,homer).
+X = bart ;
+false.
+
+96 ?- son(bart,X).
+X = homer ;
+X = marge.
+
+97 ?- daughter(X,marge).
+X = lisa ;
+X = maggie.
+
+98 ?- daughter(ling,X).
+X = selma.
+
+
+99 ?- brother(bart,X).
+X = lisa ;
+X = maggie ;
+X = lisa ;
+X = maggie.
+
+100 ?- brother(X,homer).
+X = herb ;
+false.
+
+101 ?- sister(X,bart).
+X = lisa ;
+X = maggie ;
+X = lisa ;
+X = maggie ;
+false.
+
+
+102 ?- sister(patty,X).
+X = marge ;
+X = selma ;
+X = marge ;
+X = selma.
+
+103 ?- grandfather(X,bart).
+X = abraham ;
+X = clancy ;
+false.
+
+104 ?- grandfather(abraham,X).
+X = bart ;
+X = lisa ;
+X = maggie.
+
+105 ?- aunt(X,bart).
+X = patty ;
+X = selma ;
+X = patty ;
+X = selma.
+
+
+106 ?- aunt(X,ling).
+X = marge ;
+X = patty ;
+X = marge ;
+X = patty ;
+false.
+
+107 ?- uncle(herb,X).
+X = bart ;
+X = lisa ;
+X = maggie ;
+false.
+
+108 ?- uncle(X,ling).
+false.
+
+109 ?- cousin(bart,X).
+X = ling ;
+X = ling.
+
+
+110 ?- cousin(ling,X).
+X = bart ;
+X = bart ;
+X = lisa ;
+X = lisa ;
+X = maggie ;
+X = maggie ;
+false.
+
+111 ?- ancestor(abraham,X).
+X = herb ;
+X = homer ;
+X = bart ;
+X = lisa ;
+X = maggie ;
+false.
+
+
+112 ?- ancestor(X,ling).
+X = selma ;
+X = clancy ;
+X = jackie ;
+false.
+
 
 
